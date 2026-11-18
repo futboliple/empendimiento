@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Dorada Emprende conecta el talento de los productores locales con nuevas oportunidades.">
+<title>Dorada Emprende | El talento local merece llegar más lejos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+ --cream:#fbf8ef;--paper:#fffdf8;--honey:#d99a28;--gold:#f0bd55;--amber:#b9781e;
+ --ink:#30271d;--muted:#786e60;--green:#667653;--pale:#f3ead8;--line:#e9dfce;
+ --shadow:0 18px 55px rgba(75,52,22,.10);--serif:"Playfair Display",Georgia,serif;--sans:"DM Sans",Arial,sans-serif;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:92px}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);line-height:1.65;overflow-x:hidden}
+a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}
+button{cursor:pointer}.container{width:min(1160px,calc(100% - 44px));margin:auto}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--amber);font-size:.76rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+.eyebrow:before{content:"";width:25px;height:1px;background:var(--honey)}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.12;margin:0}
+h2{font-size:clamp(2.2rem,4vw,3.55rem);letter-spacing:-.035em}
+.section-intro{max-width:620px;color:var(--muted);font-size:1.02rem;margin:17px 0 0}
+.section-head{margin-bottom:42px}.section-head.center{text-align:center}.section-head.center .section-intro{margin-left:auto;margin-right:auto}
+.btn{border:0;border-radius:999px;padding:14px 22px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:10px;transition:.25s;letter-spacing:.01em}
+.btn-primary{background:var(--ink);color:white;box-shadow:0 8px 20px #30271d20}.btn-primary:hover{background:var(--amber);transform:translateY(-2px)}
+.btn-light{background:#fff9ed;color:var(--ink);border:1px solid #eadcc3}.btn-light:hover{background:white;transform:translateY(-2px)}
+.btn-outline{background:transparent;border:1px solid #cbb995;color:var(--ink)}.btn-outline:hover{background:#fff}
+.pill{display:inline-flex;padding:7px 12px;border-radius:999px;background:#f4ead6;color:#856020;font-size:.75rem;font-weight:700}
+header{height:82px;position:sticky;top:0;z-index:1000;background:#fbf8eff0;backdrop-filter:blur(16px);border-bottom:1px solid #e9dfceaa}
+.nav-wrap{height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:11px;min-width:225px}
+.brand-mark{width:43px;height:43px;border-radius:15px;background:linear-gradient(145deg,#f4c66c,#d7962c);display:grid;place-items:center;box-shadow:inset 0 1px 0 #fff9}
+.brand-mark svg{width:30px;height:30px}.brand-name{font-family:var(--serif);font-size:1.24rem;font-weight:700;line-height:1.05;letter-spacing:-.02em}
+.brand-name small{display:block;font-family:var(--sans);font-size:.57rem;letter-spacing:.2em;text-transform:uppercase;color:#8e6a35;margin-top:4px}
+nav{display:flex;align-items:center;gap:25px}nav a{font-size:.85rem;color:#655b4e;font-weight:600;transition:.2s}nav a:hover,nav a.active{color:var(--amber)}
+.nav-cta{padding:11px 17px;font-size:.82rem}.menu-toggle{display:none;border:1px solid var(--line);background:white;border-radius:12px;padding:9px 11px;font-size:1.2rem}
+.hero{position:relative;min-height:650px;display:flex;align-items:center;overflow:hidden;background:radial-gradient(ellipse at 75% 45%,#f1d9a5 0%,#f7edda 32%,#fbf8ef 68%)}
+.hero:before{content:"";position:absolute;inset:0;background-image:radial-gradient(#c58d3320 1px,transparent 1px);background-size:24px 24px;mask-image:linear-gradient(90deg,transparent,#000 70%);pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:45px;padding:74px 0 85px;position:relative;z-index:2}
+.hero-copy{max-width:570px}.hero h1{font-size:clamp(3.1rem,6.1vw,5.65rem);letter-spacing:-.055em;margin:18px 0 22px}.hero h1 em{font-style:normal;color:var(--amber);position:relative}
+.hero-copy>p{font-size:1.1rem;color:#6d6254;max-width:480px;margin:0 0 29px}.hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+.hero-note{display:flex;align-items:center;gap:10px;margin-top:28px;color:#817563;font-size:.8rem}.tiny-leaf{width:26px;height:26px;border-radius:50%;background:#e8eadc;display:grid;place-items:center;color:var(--green)}
+.hero-art{position:relative;min-height:480px;display:grid;place-items:center}
+.honey-orbit{width:min(430px,90%);aspect-ratio:1;border-radius:50%;background:linear-gradient(145deg,#f7d991,#d99a36);padding:13px;box-shadow:0 30px 70px #9a681d30;position:relative;transform:rotate(4deg)}
+.honey-orbit:before,.honey-orbit:after{content:"";position:absolute;border:1px solid #fff9;border-radius:50%;inset:27px}
+.honey-orbit:after{inset:-22px;border-color:#d6aa5d80}
+.hero-photo{width:100%;height:100%;border-radius:50%;overflow:hidden;background:linear-gradient(140deg,#e7bd6d,#a76c26);position:relative;transform:rotate(-4deg)}
+.hero-photo img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.85)}
+.hero-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#3b281a55,transparent 55%)}
+.floating-card{position:absolute;z-index:4;background:#fffdf5;border:1px solid #fff;border-radius:18px;padding:15px 18px;box-shadow:var(--shadow);display:flex;align-items:center;gap:12px}
+.floating-card strong{display:block;font-size:.9rem}.floating-card small{color:var(--muted);font-size:.72rem}
+.float-icon{width:38px;height:38px;border-radius:13px;background:#f7ebd1;display:grid;place-items:center;font-size:1.2rem}
+.card-one{left:-5px;bottom:72px}.card-two{right:-12px;top:65px}
+.bee{position:absolute;width:40px;height:26px;z-index:5;animation:fly 9s ease-in-out infinite;filter:drop-shadow(0 5px 5px #80531a25)}
+.bee:before{content:"";position:absolute;width:21px;height:14px;background:#f1b83e;border:2px solid #5a4125;border-radius:50%;left:9px;top:7px;background-image:linear-gradient(90deg,transparent 34%,#5a4125 35%,#5a4125 48%,transparent 49%,transparent 68%,#5a4125 69%,#5a4125 81%,transparent 82%)}
+.bee:after{content:"";position:absolute;width:11px;height:9px;background:#fff8e9;border:1px solid #c8b99c;border-radius:100% 100% 30% 100%;left:10px;top:0;transform:rotate(-25deg);box-shadow:9px 2px 0 -1px #fff8e9}
+.bee i{position:absolute;right:4px;top:11px;width:5px;height:5px;background:#493521;border-radius:50%}
+.bee.b2{animation-delay:-3s;animation-duration:12s;transform:scale(.75)}.bee.b3{animation-delay:-6s;animation-duration:10s;transform:scale(.58)}
+@keyframes fly{0%,100%{translate:0 0;rotate:-8deg}25%{translate:30px -22px;rotate:8deg}50%{translate:65px 8px;rotate:0}75%{translate:25px 25px;rotate:-10deg}}
+.honey-drip{position:absolute;top:0;left:8%;width:70px;height:45px;background:linear-gradient(#e6b34c,#d5962c);border-radius:0 0 50% 50%;opacity:.32;filter:blur(1px)}
+.trust-strip{background:#fffdf8;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.trust-inner{display:grid;grid-template-columns:repeat(3,1fr);padding:22px 0;gap:20px}
+.trust-item{display:flex;align-items:center;justify-content:center;gap:11px;color:#756a5b;font-size:.86rem;font-weight:600}.trust-item span{font-size:1.25rem}
+section{padding:105px 0;position:relative}
+.story{background:var(--paper)}
+.story-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:75px;align-items:center}
+.story-image{position:relative;min-height:475px}
+.story-image-main{position:absolute;inset:0 45px 35px 0;border-radius:190px 190px 24px 24px;overflow:hidden;background:linear-gradient(135deg,#e8c783,#9b713b)}
+.story-image-main img{width:100%;height:100%;object-fit:cover}
+.story-stamp{position:absolute;right:0;bottom:0;width:160px;height:160px;border-radius:50%;background:#e9d9b7;border:9px solid var(--paper);display:grid;place-items:center;text-align:center;color:#745523;font-family:var(--serif);font-size:1.1rem;line-height:1.2;transform:rotate(8deg)}
+.story-stamp b{display:block;font-family:var(--sans);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;margin-top:6px}
+.story-copy p{color:var(--muted);margin:19px 0}.story-values{display:flex;flex-wrap:wrap;gap:9px;margin-top:25px}
+.value{padding:9px 13px;border:1px solid var(--line);border-radius:999px;font-size:.78rem;color:#77664e;background:#fff}
+.section-warm{background:#f5eddf}
+.producer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.producer-card,.product-card{background:#fffdf8;border:1px solid #eee4d4;border-radius:22px;overflow:hidden;transition:.3s;box-shadow:0 7px 25px #654a1a08}
+.producer-card:hover,.product-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.producer-img{height:220px;position:relative;overflow:hidden;background:#ead9b7}
+.producer-img img,.product-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.producer-card:hover img,.product-card:hover img{transform:scale(1.05)}
+.producer-img .pill{position:absolute;left:16px;top:15px;background:#fffdf0eF}
+.producer-body{padding:22px}.producer-body h3,.product-body h3{font-size:1.38rem;margin:8px 0}.producer-body p{font-size:.88rem;color:var(--muted);margin:0 0 17px}
+.meta{display:flex;align-items:center;gap:7px;color:#827562;font-size:.77rem;margin:12px 0 17px}
+.text-link{font-weight:700;color:#9b681e;font-size:.86rem;display:inline-flex;align-items:center;gap:7px}.text-link:hover{gap:12px}
+.demo-note{font-size:.75rem;color:#857965;background:#fff9ed;border:1px solid #eadcc3;border-radius:12px;padding:11px 14px;margin-top:25px}
+.catalog-toolbar{display:flex;justify-content:space-between;gap:15px;align-items:center;flex-wrap:wrap;margin-bottom:27px}
+.searchbox{position:relative;flex:1;max-width:350px}.searchbox input{width:100%;border:1px solid var(--line);border-radius:999px;background:#fff;padding:13px 17px 13px 43px;outline:none}.searchbox:before{content:"⌕";position:absolute;left:17px;top:5px;font-size:1.6rem;color:#92774c}
+.filters{display:flex;gap:8px;flex-wrap:wrap}.filter-btn{border:1px solid var(--line);background:#fffdf8;border-radius:999px;padding:9px 14px;font-size:.78rem;color:#756b5d;font-weight:600}.filter-btn.active,.filter-btn:hover{background:var(--ink);border-color:var(--ink);color:#fff}
+.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.product-img{height:220px;position:relative;background:#ead9b7;overflow:hidden}
+.product-img .pill{position:absolute;top:14px;left:14px;background:#fffdf0}
+.product-body{padding:19px 20px 21px}.product-body h3{font-size:1.25rem}.product-by{color:#897d6c;font-size:.77rem}.product-desc{font-size:.85rem;color:var(--muted);margin:12px 0}
+.product-foot{display:flex;align-items:center;justify-content:space-between;border-top:1px solid #eee6d9;padding-top:14px;margin-top:14px}
+.price{font-weight:700;color:#8c5d19}.map-section{background:#fffdf8}
+.map-layout{display:grid;grid-template-columns:1.45fr .75fr;gap:22px;align-items:stretch}
+#producer-map{height:465px;border-radius:22px;overflow:hidden;border:1px solid var(--line);z-index:1}
+.map-list{border:1px solid var(--line);border-radius:22px;padding:21px;background:#fbf7ee}
+.map-list h3{font-size:1.35rem;margin-bottom:14px}
+.map-producer{width:100%;border:0;border-bottom:1px solid var(--line);background:transparent;text-align:left;padding:14px 0;display:flex;gap:12px;align-items:center;color:var(--ink)}
+.map-producer:last-child{border-bottom:0}.map-producer:hover strong{color:var(--amber)}
+.map-dot{width:35px;height:35px;flex:0 0 35px;border-radius:12px;background:#f0dfbd;display:grid;place-items:center}
+.map-producer strong{display:block;font-size:.86rem}.map-producer small{color:var(--muted);font-size:.74rem}
+.map-caption{font-size:.75rem;color:#867966;margin-top:13px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
+.step{padding:25px 22px;background:#fffdf8;border:1px solid var(--line);border-radius:20px;position:relative}
+.step-number{width:39px;height:39px;border-radius:13px;background:#f2e3c4;color:#96641d;display:grid;place-items:center;font-weight:700;margin-bottom:22px}
+.step h3{font-size:1.25rem;margin-bottom:9px}.step p{font-size:.84rem;color:var(--muted);margin:0}
+.join{background:#3d3828;color:#fff8eb;overflow:hidden}
+.join:before{content:"";position:absolute;width:480px;height:480px;border:1px solid #d9b76b35;border-radius:50%;right:-130px;top:-190px;box-shadow:0 0 0 35px #d9b76b0a,0 0 0 75px #d9b76b08}
+.join-grid{display:grid;grid-template-columns:1fr .85fr;gap:70px;align-items:center;position:relative;z-index:1}
+.join .eyebrow{color:#e5bd6e}.join h2{max-width:540px}.join-copy p{color:#d5cbb7;max-width:520px;margin:20px 0 27px}
+.join-points{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:30px}.join-point{display:flex;gap:9px;align-items:center;color:#e5dac7;font-size:.84rem}.join-point span{color:#e7bd66}
+.form-card{background:#fffdf8;color:var(--ink);border-radius:24px;padding:28px;box-shadow:0 20px 60px #16130d33}
+.form-card h3{font-size:1.55rem;margin-bottom:7px}.form-card>p{font-size:.82rem;color:var(--muted);margin:0 0 20px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}.field{display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}.field label{font-size:.76rem;font-weight:700;color:#655a4b}.field input,.field select,.field textarea{border:1px solid var(--line);border-radius:11px;background:#fff;padding:11px 12px;outline:none;font-size:.86rem}.field input:focus,.field select:focus,.field textarea:focus{border-color:#d4a34b;box-shadow:0 0 0 3px #d4a34b20}.field textarea{min-height:82px;resize:vertical}
+.form-card .btn{width:100%;margin-top:16px}
+.nature{background:#f5eddf}
+.nature-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:55px;align-items:center}
+.nature-copy p{color:var(--muted);margin:19px 0}
+.nature-visual{display:grid;grid-template-columns:1fr 1fr;gap:14px;position:relative}
+.nature-photo{height:245px;border-radius:20px;overflow:hidden;background:#e4d3ad}
+.nature-photo img{width:100%;height:100%;object-fit:cover}
+.nature-photo.tall{height:320px;grid-row:span 2}
+.video-card{height:170px;border-radius:20px;background:linear-gradient(135deg,#5b593a,#a68b51);position:relative;overflow:hidden;color:white;display:flex;align-items:end;padding:18px}
+.video-card:before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#211b13b8,transparent),url('https://images.unsplash.com/photo-1471943311424-646960669fbc?auto=format&fit=crop&w=900&q=80') center/cover;opacity:.8}
+.video-card>*{position:relative;z-index:1}.play{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:#fff;color:#5d4827;margin-right:11px;flex:0 0 42px}.video-card strong{font-size:.87rem;line-height:1.2}
+.media-note{font-size:.72rem;color:#82745e;margin-top:12px}
+.contact{background:var(--paper)}
+.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px}
+.contact-info p{color:var(--muted);max-width:370px}.contact-detail{display:flex;gap:12px;align-items:center;margin-top:22px;color:#756a5a;font-size:.88rem}.contact-detail span{width:37px;height:37px;border-radius:12px;background:#f1e5cf;display:grid;place-items:center}
+.contact-form{display:grid;grid-template-columns:1fr 1fr;gap:13px}.contact-form .field.full{grid-column:1/-1}
+footer{background:#302a20;color:#e9dfcd;padding:55px 0 25px}
+.footer-top{display:flex;justify-content:space-between;gap:40px;align-items:flex-start;padding-bottom:35px;border-bottom:1px solid #ffffff20}
+.footer-brand .brand-name{color:#fff7e8}.footer-brand .brand-name small{color:#d9b878}
+.footer-desc{max-width:330px;color:#c2b7a4;font-size:.84rem;margin-top:16px}
+.footer-links{display:flex;gap:65px}.footer-col strong{display:block;font-size:.82rem;margin-bottom:14px;color:#e9c77f}.footer-col a{display:block;color:#c2b7a4;font-size:.8rem;margin:9px 0}.footer-col a:hover{color:#fff}
+.footer-bottom{display:flex;justify-content:space-between;gap:20px;color:#a99d8b;font-size:.73rem;padding-top:22px}
+.modal{position:fixed;inset:0;background:#211b16a8;z-index:2000;display:none;align-items:center;justify-content:center;padding:20px}.modal.open{display:flex}
+.modal-box{width:min(520px,100%);background:#fffdf8;border-radius:24px;padding:28px;position:relative;box-shadow:0 30px 90px #0004;max-height:85vh;overflow:auto}
+.modal-close{position:absolute;right:17px;top:14px;border:0;background:#f3ead8;border-radius:50%;width:34px;height:34px;font-size:1.1rem}
+.modal-box h3{font-size:1.8rem;margin:8px 35px 10px 0}.modal-box p{color:var(--muted);font-size:.9rem}
+.toast{position:fixed;bottom:22px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;z-index:3000;background:#302a20;color:white;padding:13px 20px;border-radius:999px;font-size:.85rem;box-shadow:var(--shadow);transition:.3s}.toast.show{opacity:1;transform:translate(-50%,0)}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s}.reveal.visible{opacity:1;transform:none}
+@media(max-width:960px){nav{gap:13px}nav a{font-size:.78rem}.nav-cta{display:none}.hero-grid{gap:20px}.story-grid,.nature-grid,.join-grid{gap:35px}.producer-grid,.product-grid{grid-template-columns:repeat(2,1fr)}.map-layout{grid-template-columns:1fr}.map-list{display:grid;grid-template-columns:1fr 1fr;gap:0 20px}.map-list h3,.map-caption{grid-column:1/-1}.steps{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:720px){.container{width:min(100% - 32px,560px)}header{height:72px}.brand{min-width:0}.menu-toggle{display:block}nav{display:none;position:absolute;left:16px;right:16px;top:71px;background:#fffdf8;border:1px solid var(--line);border-radius:17px;padding:16px;box-shadow:var(--shadow);flex-direction:column;align-items:stretch;gap:0}nav.open{display:flex}nav a{padding:12px 8px;border-bottom:1px solid #eee7dc;font-size:.9rem}nav a:last-child{border:0}
+.hero{min-height:0}.hero-grid{grid-template-columns:1fr;padding:65px 0 60px;gap:20px}.hero h1{font-size:clamp(3rem,13vw,4.2rem)}.hero-copy>p{font-size:1rem}.hero-art{min-height:350px}.honey-orbit{width:min(310px,78%)}.card-one{left:0;bottom:28px}.card-two{right:0;top:30px}.floating-card{padding:10px 12px}.floating-card strong{font-size:.78rem}.floating-card small{font-size:.65rem}.trust-inner{grid-template-columns:1fr;padding:17px 0;gap:12px}.trust-item{justify-content:flex-start}
+section{padding:75px 0}.story-grid,.nature-grid,.join-grid,.contact-grid{grid-template-columns:1fr}.story-image{min-height:360px;order:2}.story-image-main{inset:0 35px 28px 0}.story-stamp{width:125px;height:125px;font-size:.9rem}.producer-grid,.product-grid{grid-template-columns:1fr}.producer-img,.product-img{height:230px}.catalog-toolbar{align-items:stretch}.searchbox{max-width:none;flex-basis:100%}.filters{overflow-x:auto;flex-wrap:nowrap;padding-bottom:5px}.filter-btn{white-space:nowrap}
+#producer-map{height:360px}.map-list{display:block}.steps{grid-template-columns:1fr 1fr}.join-points{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.nature-visual{gap:9px}.nature-photo{height:170px}.nature-photo.tall{height:260px}.video-card{height:160px}.contact-form{grid-template-columns:1fr}.contact-form .field.full{grid-column:auto}.footer-top{flex-direction:column}.footer-links{gap:45px}.footer-bottom{flex-direction:column}.section-head{margin-bottom:30px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+
+.hero-video{background:#443a27;color:#fff8e9;isolation:isolate}
+.hero-bg-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;opacity:.72}
+.hero-video-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(38,31,20,.84),rgba(49,39,23,.55) 48%,rgba(49,39,23,.32)),linear-gradient(0deg,rgba(35,27,17,.22),transparent 50%);z-index:-1}
+.hero-video .eyebrow{color:#f2cc7e}.hero-video .eyebrow:before{background:#f2cc7e}
+.hero-video h1{color:#fffaf0}.hero-video h1 em{color:#f4c96f}
+.hero-video .hero-copy>p,.hero-video .hero-note{color:#f1e4cd}
+.hero-video .tiny-leaf{background:#fff2d3;color:#8c641e}
+.hero-video .btn-primary{background:#f2c66b;color:#382c1c}.hero-video .btn-primary:hover{background:#ffdc91}
+.hero-video .btn-light{background:#ffffff18;border-color:#ffffff80;color:#fffaf0}
+.hero-video .btn-light:hover{background:#ffffff2e}
+.hero-glass-card{width:min(390px,90%);padding:38px 34px;border:1px solid #fff8;border-radius:28px;background:linear-gradient(145deg,#fffaf0e8,#fffaf0c9);color:#3c3021;box-shadow:0 25px 80px #1b140b55;backdrop-filter:blur(10px);text-align:center;transform:rotate(2deg)}
+.glass-kicker{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:#98702d;font-weight:700}
+.glass-hex{width:76px;height:76px;margin:22px auto 18px;border:1px solid #d4ae66;border-radius:24px;display:grid;place-items:center;font-size:2rem;color:#a97627;background:#f8edcf}
+.hero-glass-card h3{font-size:1.75rem;line-height:1.2}.hero-glass-card p{font-size:.9rem;color:#766954;margin:14px 0 20px}
+.glass-signature{font-size:.67rem;letter-spacing:.08em;color:#92713e;text-transform:uppercase}
+.hero-video .floating-card{background:#fffaf0ed}
+.illustrated-map{height:465px;position:relative;overflow:hidden;border-radius:24px;border:1px solid #e3d6bd;background:linear-gradient(135deg,#e8e4cc,#f4e9cf 50%,#e5e5cf);box-shadow:inset 0 0 0 8px #ffffff70}
+.illustrated-map:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 22% 24%,#9fae8255 0 9%,transparent 10%),radial-gradient(ellipse at 80% 70%,#9fae8244 0 12%,transparent 13%),radial-gradient(ellipse at 70% 17%,#a8b58a55 0 8%,transparent 9%),radial-gradient(ellipse at 15% 82%,#a8b58a55 0 10%,transparent 11%),repeating-linear-gradient(28deg,transparent 0 35px,#ffffff50 36px 38px,transparent 39px 75px)}
+.map-roads{position:absolute;inset:0;width:100%;height:100%;opacity:.9}
+.map-roads path{fill:none;stroke:#fffaf0;stroke-width:12;stroke-linecap:round}.map-roads path:nth-child(even){stroke:#d9cba9;stroke-width:5}
+.map-watermark{position:absolute;left:50%;top:43%;transform:translate(-50%,-50%);font-family:var(--serif);font-size:clamp(2rem,5vw,4rem);font-weight:700;letter-spacing:.12em;color:#6c795d25;text-align:center;line-height:1}
+.map-watermark small{font:700 .55rem var(--sans);letter-spacing:.28em}
+.map-zone{position:absolute;color:#718064;font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;font-weight:700}
+.z1{left:41%;top:19%}.z2{left:70%;top:29%}.z3{right:10%;bottom:26%}.z4{left:20%;bottom:18%}
+.map-pin{position:absolute;border:0;background:#fffdf4;border-radius:16px;padding:8px 12px;box-shadow:0 7px 22px #59452225;display:flex;align-items:center;gap:8px;color:#3b3021;transition:.2s;z-index:2}
+.map-pin span{width:30px;height:30px;border-radius:10px;background:#f4e5c3;display:grid;place-items:center}.map-pin b{font-size:.75rem;white-space:nowrap}
+.map-pin:hover,.map-pin.selected{transform:translateY(-4px);box-shadow:0 12px 25px #59452240;outline:2px solid #d9a847}
+.pin1{left:28%;top:36%}.pin2{left:56%;top:56%}.pin3{left:65%;top:18%}
+.map-legend{position:absolute;left:18px;bottom:17px;background:#fffdf0e8;border-radius:12px;padding:10px 13px;display:flex;flex-direction:column;gap:3px;font-size:.73rem;color:#655a48;z-index:2}
+.map-legend i{display:inline-block;width:8px;height:8px;background:#bd8428;border-radius:50%;margin-right:6px}.map-legend small{color:#877a65}
+.map-producer.selected{background:#f2e6cf;border-radius:12px;padding-left:10px}
+.nature-video-row{margin-top:25px;background:#fffdf8;border:1px solid var(--line);border-radius:20px;padding:14px;display:grid;grid-template-columns:.7fr 1.3fr;gap:18px;align-items:center}
+.nature-video-copy{padding:10px 14px}.nature-video-copy strong{font-family:var(--serif);font-size:1.25rem}.nature-video-copy p{font-size:.82rem;color:var(--muted);margin:8px 0 0}
+.nature-video-row video{width:100%;max-height:220px;aspect-ratio:16/9;object-fit:cover;border-radius:13px;background:#2f2a20}
+@media(max-width:720px){.hero-grid{min-height:0}.hero-art{min-height:310px}.hero-glass-card{padding:28px 22px}.illustrated-map{height:360px}.map-pin{padding:6px 8px}.map-pin b{font-size:.63rem}.map-pin span{width:25px;height:25px}.pin1{left:9%;top:37%}.pin2{left:40%;top:59%}.pin3{left:48%;top:17%}.map-watermark{font-size:2.1rem}.nature-video-row{grid-template-columns:1fr}.nature-video-row video{max-height:none}}
+
+</style>
+</head>
+<body>
+<header>
+ <div class="container nav-wrap">
+  <a class="brand" href="#inicio" aria-label="Dorada Emprende, inicio">
+   <span class="brand-mark"><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 8c-5 0-8 4-8 9 0 6 5 12 8 15 3-3 8-9 8-15 0-5-3-9-8-9Z" fill="#fff4d7" stroke="#62441f" stroke-width="1.5"/><path d="M14 15c-5-5-10 0-6 5 2 2 5 1 7-1M26 15c5-5 10 0 6 5-2 2-5 1-7-1" fill="#fff4d7" stroke="#62441f" stroke-width="1.5"/><path d="M16 18h8M16 22h8" stroke="#9c651e" stroke-width="2" stroke-linecap="round"/><circle cx="20" cy="12" r="2" fill="#62441f"/></svg></span>
+   <span class="brand-name">Dorada Emprende<small>Talento que conecta</small></span>
+  </a>
+  <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+  <nav id="mainNav">
+   <a href="#inicio">Inicio</a><a href="#productores">Productores</a><a href="#catalogo">Catálogo</a><a href="#mapa">Mapa</a><a href="#historia">Nuestra historia</a><a href="#contacto">Contacto</a>
+  </nav>
+  <a class="btn btn-primary nav-cta" href="#catalogo">Explorar productos <span>↗</span></a>
+ </div>
+</header>
+
+<main>
+<section class="hero hero-video" id="inicio">
+ <video class="hero-bg-video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1471943311424-646960669fbc?auto=format&fit=crop&w=1600&q=85">
+  <source src="https://upload.wikimedia.org/wikipedia/commons/c/ce/HoneyBeeFlying.webm" type="video/webm">
+ </video><div class="hero-video-shade"></div>
+ <div class="bee" style="left:8%;top:24%"><i></i></div><div class="bee b2" style="left:49%;top:17%"><i></i></div><div class="bee b3" style="right:8%;bottom:18%"><i></i></div>
+ <div class="container hero-grid">
+  <div class="hero-copy reveal"><span class="eyebrow">Una plataforma para el talento local</span>
+   <h1>El talento local merece <em>llegar más lejos.</em></h1>
+   <p>Descubre productos auténticos, conoce a quienes los elaboran y conecta con el talento de nuestros productores locales.</p>
+   <div class="hero-actions"><a class="btn btn-primary" href="#catalogo">Explorar catálogo <span>↗</span></a><a class="btn btn-light" href="#productores">Conocer productores</a></div>
+   <div class="hero-note"><span class="tiny-leaf">✦</span> Conectamos historias, productos y oportunidades.</div>
+  </div>
+  <div class="hero-art reveal"><div class="hero-glass-card"><span class="glass-kicker">La naturaleza inspira</span><div class="glass-hex">✿</div>
+   <h3>Pequeños productores.<br>Grandes oportunidades.</h3><p>Conoce el origen, valora el trabajo y apoya lo que nace en nuestra comunidad.</p>
+   <span class="glass-signature">Dorada Emprende · Santiago, RD</span></div>
+   <div class="floating-card card-one"><span class="float-icon">🍯</span><span><strong>Hecho con dedicación</strong><small>Historias detrás de cada producto</small></span></div>
+   <div class="floating-card card-two"><span class="float-icon">🌿</span><span><strong>Apoya lo local</strong><small>Descubre nuevas oportunidades</small></span></div>
+  </div>
+ </div>
+</section>
+
+<div class="trust-strip"><div class="container trust-inner">
+ <div class="trust-item"><span>✿</span> Productos con identidad local</div><div class="trust-item"><span>⌖</span> Productores en un mismo espacio</div><div class="trust-item"><span>♡</span> Conexiones que impulsan comunidades</div>
+</div></div>
+
+<section class="story" id="historia"><div class="container story-grid">
+ <div class="story-image reveal"><div class="story-image-main"><img src="https://images.unsplash.com/photo-1471943311424-646960669fbc?auto=format&fit=crop&w=900&q=85" alt="Frascos de miel natural" onerror="this.style.display='none'"></div><div class="story-stamp">Origen local<b>Grandes historias</b></div></div>
+ <div class="story-copy reveal"><span class="eyebrow">Nuestra historia</span><h2>Detrás de cada producto, hay una historia.</h2>
+  <p>En nuestras comunidades hay personas que elaboran productos de calidad, pero muchas veces no cuentan con los medios necesarios para promocionarlos, llegar a nuevos compradores o ampliar sus negocios.</p>
+  <p>Dorada Emprende nace como una propuesta digital para darles mayor visibilidad, reunir sus ofertas en un solo lugar y facilitar el contacto con personas y negocios interesados.</p>
+  <div class="story-values"><span class="value">Colaboración</span><span class="value">Confianza</span><span class="value">Responsabilidad</span><span class="value">Desarrollo local</span></div>
+ </div>
+</div></section>
+
+<section class="section-warm" id="productores"><div class="container">
+ <div class="section-head reveal"><span class="eyebrow">Personas que crean</span><h2>Conoce a nuestros productores.</h2><p class="section-intro">Cada emprendimiento tiene algo propio que ofrecer. Explora sus historias, conoce lo que elaboran y descubre nuevas conexiones.</p></div>
+ <div class="producer-grid" id="producerGrid">
+  <article class="producer-card reveal"><div class="producer-img"><img src="https://images.unsplash.com/photo-1587049352851-8d4e89133924?auto=format&fit=crop&w=800&q=80" alt="Frascos de miel" onerror="this.style.display='none'"><span class="pill">Productos apícolas</span></div><div class="producer-body"><span class="eyebrow">Ejemplo de productor</span><h3>Colmena Dorada</h3><p>Un emprendimiento demostrativo dedicado a presentar miel y productos inspirados en el trabajo de las abejas.</p><div class="meta">⌖ Santiago de los Caballeros</div><a href="#" class="text-link" data-producer="0">Conocer productor →</a></div></article>
+  <article class="producer-card reveal"><div class="producer-img"><img src="https://images.unsplash.com/photo-1587049352851-8d4e89133924?auto=format&fit=crop&w=800&q=80" alt="Café servido" onerror="this.style.display='none'"><span class="pill">Café</span></div><div class="producer-body"><span class="eyebrow">Ejemplo de productor</span><h3>Panal de Oro</h3><p>Perfil demostrativo de un emprendimiento que presenta miel en panal y productos apícolas.</p><div class="meta">⌖ Santiago, República Dominicana</div><a href="#" class="text-link" data-producer="1">Conocer productor →</a></div></article>
+  <article class="producer-card reveal"><div class="producer-img"><img src="https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=800&q=80" alt="Alimentos artesanales" onerror="this.style.display='none'"><span class="pill">Dulces artesanales</span></div><div class="producer-body"><span class="eyebrow">Ejemplo de productor</span><h3>Cera &amp; Miel Artesanal</h3><p>Ejemplo de un pequeño taller que transforma cera de abeja en artículos artesanales.</p><div class="meta">⌖ Zona norte de Santiago</div><a href="#" class="text-link" data-producer="2">Conocer productor →</a></div></article>
+ </div>
+ <div class="demo-note">Los nombres, perfiles, precios y ubicaciones de esta demostración son ficticios y se utilizan únicamente para presentar el funcionamiento de la plataforma.</div>
+</div></section>
+
+<section id="catalogo"><div class="container">
+ <div class="section-head reveal"><span class="eyebrow">Explora y descubre</span><h2>Encuentra productos con esencia local.</h2><p class="section-intro">Un catálogo centrado en la miel y en productos artesanales vinculados con la apicultura.</p></div>
+ <div class="catalog-toolbar"><div class="searchbox"><input id="productSearch" type="search" placeholder="Buscar un producto..." aria-label="Buscar productos"></div><div class="filters" id="filters"><button class="filter-btn active" data-filter="Todos">Todos</button><button class="filter-btn" data-filter="Miel">Miel</button><button class="filter-btn" data-filter="Miel en panal">Miel en panal</button><button class="filter-btn" data-filter="Cera artesanal">Cera artesanal</button><button class="filter-btn" data-filter="Miel y cera">Miel y cera</button></div></div>
+ <div class="product-grid" id="productGrid">
+  <article class="product-card reveal" data-category="Miel" data-search="miel pura colmena dorada"><div class="product-img"><img src="https://images.unsplash.com/photo-1587049352851-8d4e89133924?auto=format&fit=crop&w=800&q=80" alt="Miel en frasco" onerror="this.style.display='none'"><span class="pill">Miel</span></div><div class="product-body"><span class="product-by">Colmena Dorada · Santiago</span><h3>Miel de la colmena</h3><p class="product-desc">Muestra de producto para presentar información, origen y contacto del productor.</p><div class="product-foot"><span class="price">RD$ 350</span><a href="#" class="text-link" data-product="Miel de la colmena">Ver producto →</a></div></div></article>
+  <article class="product-card reveal" data-category="Miel en panal" data-search="miel panal panal de oro"><div class="product-img"><img src="https://images.unsplash.com/photo-1587049352851-8d4e89133924?auto=format&fit=crop&w=800&q=80" alt="Miel en panal" onerror="this.style.display='none'"><span class="pill">Café</span></div><div class="product-body"><span class="product-by">Panal de Oro · Santiago</span><h3>Miel en panal</h3><p class="product-desc">Ejemplo de ficha para describir presentación, características y productor.</p><div class="product-foot"><span class="price">RD$ 280</span><a href="#" class="text-link" data-product="Miel en panal">Ver producto →</a></div></div></article>
+  <article class="product-card reveal" data-category="Cera artesanal" data-search="vela cera abeja artesanal"><div class="product-img"><img src="https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=800&q=80" alt="Velas artesanales de cera de abeja" onerror="this.style.display='none'"><span class="pill">Conservas</span></div><div class="product-body"><span class="product-by">Cera &amp; Miel Artesanal · Santiago</span><h3>Velas de cera de abeja</h3><p class="product-desc">Ejemplo de producto local con descripción breve y datos de contacto.</p><div class="product-foot"><span class="price">RD$ 220</span><a href="#" class="text-link" data-product="Velas de cera de abeja">Ver producto →</a></div></div></article>
+  <article class="product-card reveal" data-category="Miel y cera" data-search="balsamo cera abeja artesanal"><div class="product-img"><img src="https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=800&q=80" alt="Bálsamo artesanal de cera de abeja" onerror="this.style.display='none'"><span class="pill">Dulces</span></div><div class="product-body"><span class="product-by">Cera &amp; Miel Artesanal · Santiago</span><h3>Bálsamo de cera de abeja</h3><p class="product-desc">Ficha demostrativa para mostrar variedad y facilitar consultas.</p><div class="product-foot"><span class="price">RD$ 180</span><a href="#" class="text-link" data-product="Bálsamo de cera de abeja">Ver producto →</a></div></div></article>
+  <article class="product-card reveal" data-category="Miel" data-search="propoleo productos apicolas colmena"><div class="product-img"><img src="https://images.unsplash.com/photo-1471943311424-646960669fbc?auto=format&fit=crop&w=800&q=80" alt="Productos de miel" onerror="this.style.display='none'"><span class="pill">Miel</span></div><div class="product-body"><span class="product-by">Colmena Dorada · Santiago</span><h3>Selección apícola</h3><p class="product-desc">Espacio para explicar otros productos derivados de la actividad apícola.</p><div class="product-foot"><span class="price">RD$ 300</span><a href="#" class="text-link" data-product="Selección apícola">Ver producto →</a></div></div></article>
+  <article class="product-card reveal" data-category="Miel y cera" data-search="jabon artesanal miel abeja"><div class="product-img"><img src="https://images.unsplash.com/photo-1471943311424-646960669fbc?auto=format&fit=crop&w=800&q=80" alt="Jabón artesanal con miel" onerror="this.style.display='none'"><span class="pill">Conservas</span></div><div class="product-body"><span class="product-by">Cera &amp; Miel Artesanal · Santiago</span><h3>Jabón artesanal con miel</h3><p class="product-desc">Ejemplo de una oferta que puede encontrarse por categoría en el catálogo.</p><div class="product-foot"><span class="price">RD$ 250</span><a href="#" class="text-link" data-product="Jabón artesanal con miel">Ver producto →</a></div></div></article>
+ </div><p id="noResults" style="display:none;color:var(--muted);text-align:center;padding:30px">No encontramos productos con esa búsqueda.</p>
+ <div class="demo-note">Precios ilustrativos en pesos dominicanos (RD$). No representan ofertas comerciales reales.</div>
+</div></section>
+
+<section class="map-section" id="mapa"><div class="container">
+ <div class="section-head reveal"><span class="eyebrow">Encuentra y conecta</span><h2>El talento local está más cerca.</h2><p class="section-intro">Explora las ubicaciones demostrativas de los emprendimientos y selecciona un punto para conocer más sobre cada productor.</p></div>
+ <div class="map-layout reveal">
+  <div class="illustrated-map" id="producer-map" aria-label="Mapa ilustrativo interactivo de productores en Santiago">
+   <div class="map-watermark">SANTIAGO<br><small>REPÚBLICA DOMINICANA</small></div>
+   <svg class="map-roads" viewBox="0 0 800 500" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M-30 115 C130 155 160 40 300 90 S520 180 830 70"/><path d="M-30 285 C140 230 240 340 380 270 S610 180 830 290"/>
+    <path d="M60 520 C140 380 180 300 250 180 S390 70 430 -30"/><path d="M340 530 C360 390 480 360 500 230 S610 80 720 -30"/>
+    <path d="M-20 420 C160 390 250 430 390 390 S650 370 830 420"/><path d="M80 -20 C180 100 250 160 360 170 S570 120 760 200"/>
+   </svg>
+   <span class="map-zone z1">Centro</span><span class="map-zone z2">Norte</span><span class="map-zone z3">Este</span><span class="map-zone z4">Sur</span>
+   <button class="map-pin pin1" data-map="0"><span>🍯</span><b>Colmena Dorada</b></button>
+   <button class="map-pin pin2" data-map="1"><span>🐝</span><b>Panal de Oro</b></button>
+   <button class="map-pin pin3" data-map="2"><span>🌼</span><b>Cera &amp; Miel</b></button>
+   <div class="map-legend"><span><i></i> Productores de ejemplo</span><small>Ubicaciones aproximadas</small></div>
+  </div>
+  <aside class="map-list"><h3>Productores en el mapa</h3>
+   <button class="map-producer" data-map="0"><span class="map-dot">🍯</span><span><strong>Colmena Dorada</strong><small>Miel natural · Santiago</small></span></button>
+   <button class="map-producer" data-map="1"><span class="map-dot">🐝</span><span><strong>Panal de Oro</strong><small>Miel en panal · Santiago</small></span></button>
+   <button class="map-producer" data-map="2"><span class="map-dot">🌼</span><span><strong>Cera &amp; Miel Artesanal</strong><small>Cera y artículos artesanales · Santiago</small></span></button>
+   <p class="map-caption">Mapa esquemático para la demostración. Los puntos son ficticios y no representan direcciones comerciales reales.</p>
+  </aside>
+ </div>
+</div></section>
+
+<section class="section-warm"><div class="container">
+ <div class="section-head center reveal"><span class="eyebrow">Una conexión sencilla</span><h2>¿Cómo funciona?</h2><p class="section-intro">Un recorrido simple para descubrir productos y acercar oportunidades.</p></div>
+ <div class="steps">
+  <article class="step reveal"><div class="step-number">01</div><h3>Descubre</h3><p>Explora el catálogo y encuentra productos de distintos emprendimientos.</p></article>
+  <article class="step reveal"><div class="step-number">02</div><h3>Conoce</h3><p>Consulta la historia, la ubicación y la información de cada productor.</p></article>
+  <article class="step reveal"><div class="step-number">03</div><h3>Conecta</h3><p>Encuentra una vía de contacto para conversar directamente con el negocio.</p></article>
+  <article class="step reveal"><div class="step-number">04</div><h3>Apoya</h3><p>Descubre nuevas opciones y contribuye al movimiento de la economía local.</p></article>
+ </div>
+</div></section>
+
+<section class="join" id="emprendedores"><div class="container join-grid">
+ <div class="join-copy reveal"><span class="eyebrow">Un espacio para crecer</span><h2>Tu trabajo merece nuevas oportunidades.</h2><p>Si tienes un pequeño negocio o elaboras productos, Dorada Emprende representa una vitrina digital para presentar lo que haces y acercarte a posibles clientes.</p>
+  <div class="join-points"><div class="join-point"><span>✦</span> Mayor visibilidad</div><div class="join-point"><span>✦</span> Catálogo organizado</div><div class="join-point"><span>✦</span> Nuevos contactos</div><div class="join-point"><span>✦</span> Oportunidades comerciales</div></div>
+ </div>
+ <form class="form-card reveal" id="producerForm"><h3>Presenta tu emprendimiento</h3><p>Completa este formulario de demostración para mostrar cómo podría funcionar el registro.</p>
+  <div class="form-grid">
+   <div class="field"><label for="pname">Tu nombre</label><input id="pname" required placeholder="Nombre y apellido"></div>
+   <div class="field"><label for="business">Nombre del negocio</label><input id="business" required placeholder="Tu emprendimiento"></div>
+   <div class="field"><label for="location">Ubicación</label><input id="location" required placeholder="Sector o municipio"></div>
+   <div class="field"><label for="category">Categoría</label><select id="category" required><option value="">Seleccionar</option><option>Miel y productos apícolas</option><option>Café</option><option>Dulces</option><option>Productos agrícolas</option><option>Conservas</option><option>Otros</option></select></div>
+   <div class="field full"><label for="pcontact">Contacto</label><input id="pcontact" required placeholder="Teléfono o correo"></div>
+   <div class="field full"><label for="description">Cuéntanos sobre tus productos</label><textarea id="description" placeholder="Describe brevemente tu emprendimiento"></textarea></div>
+  </div><button class="btn btn-primary" type="submit">Enviar solicitud de ejemplo ↗</button>
+ </form>
+</div></section>
+
+<section class="nature"><div class="container nature-grid">
+ <div class="nature-copy reveal"><span class="eyebrow">Naturaleza y responsabilidad</span><h2>Cuidar la naturaleza también es parte del proceso.</h2><p>Las abejas cumplen una función esencial en la polinización y el equilibrio de los ecosistemas. Conocer su labor nos recuerda la importancia de protegerlas y valorar el trabajo responsable de la apicultura.</p><p>Esta sección educativa reúne contenido sobre las abejas, las flores y las prácticas de cuidado que deben acompañar la producción apícola.</p><a href="#contacto" class="text-link">Conoce más sobre el proyecto →</a></div>
+ <div class="nature-visual reveal">
+  <div class="nature-photo tall"><img src="https://images.unsplash.com/photo-1471943311424-646960669fbc?auto=format&fit=crop&w=900&q=85" alt="Miel y productos de la colmena" onerror="this.style.display='none'"></div>
+  <div class="nature-photo"><img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=700&q=85" alt="Flores que visitan las abejas" onerror="this.style.display='none'"></div>
+  <a class="video-card" href="https://www.pexels.com/video/a-beekeeper-taking-care-of-bees-5241054/" target="_blank" rel="noopener"><span class="play">▶</span><strong>Cuidado de las colmenas<br><small style="font-weight:400">Ver video de apicultura responsable · Pexels</small></strong></a>
+ </div>
+ <div class="nature-video-row"><div class="nature-video-copy"><strong>La vida de las abejas en movimiento</strong><p>Un vistazo a su vuelo y a su relación con las flores.</p></div>
+  <video controls preload="metadata" playsinline poster="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=900&q=80">
+   <source src="https://upload.wikimedia.org/wikipedia/commons/c/ce/HoneyBeeFlying.webm" type="video/webm">Tu navegador no puede reproducir este video.
+  </video></div>
+ <p class="media-note">Video de abeja en vuelo: Dennis.insect.filmer, Wikimedia Commons, licencia CC BY-SA 4.0. <a href="https://commons.wikimedia.org/wiki/File:HoneyBeeFlying.webm" target="_blank" rel="noopener">Ver autoría y licencia</a>. Video sobre cuidado de colmenas: <a href="https://www.pexels.com/video/a-beekeeper-taking-care-of-bees-5241054/" target="_blank" rel="noopener">Pexels</a>.</p>
+</div></section>
+
+<section class="contact" id="contacto"><div class="container contact-grid">
+ <div class="contact-info reveal"><span class="eyebrow">Hablemos</span><h2>Las buenas conexiones comienzan aquí.</h2><p>¿Eres productor, tienes un negocio o deseas conocer más sobre la propuesta? Este espacio representa nuestro canal de contacto.</p>
+  <div class="contact-detail"><span>⌖</span> Santiago de los Caballeros, República Dominicana</div><div class="contact-detail"><span>✉</span> contacto@doradaemprende.demo</div><div class="contact-detail"><span>♡</span> Apoyar el talento de nuestra comunidad</div>
+ </div>
+ <form class="contact-form reveal" id="contactForm">
+  <div class="field"><label for="cname">Nombre</label><input id="cname" required placeholder="Tu nombre"></div><div class="field"><label for="cemail">Correo electrónico</label><input id="cemail" type="email" required placeholder="tunombre@correo.com"></div>
+  <div class="field full"><label for="cmessage">Mensaje</label><textarea id="cmessage" required placeholder="¿En qué podemos ayudarte?"></textarea></div><div class="field full"><button class="btn btn-primary" type="submit">Enviar mensaje ↗</button></div>
+ </form>
+</div></section>
+</main>
+
+<footer><div class="container">
+ <div class="footer-top"><div class="footer-brand"><a class="brand" href="#inicio"><span class="brand-mark">✿</span><span class="brand-name">Dorada Emprende<small>Talento que conecta</small></span></a><p class="footer-desc">Una propuesta digital para dar visibilidad a los productores locales y acercarlos a nuevas oportunidades.</p></div>
+  <div class="footer-links"><div class="footer-col"><strong>Explora</strong><a href="#productores">Productores</a><a href="#catalogo">Catálogo</a><a href="#mapa">Mapa</a></div><div class="footer-col"><strong>Conócenos</strong><a href="#historia">Nuestra historia</a><a href="#emprendedores">Para emprendedores</a><a href="#contacto">Contacto</a></div></div>
+ </div><div class="footer-bottom"><span>© 2026 Dorada Emprende · Proyecto demostrativo académico</span><span>Hecho con propósito para impulsar lo local.</span></div>
+</div></footer>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-box"><button class="modal-close" id="modalClose" aria-label="Cerrar">×</button><span class="eyebrow">Dorada Emprende</span><h3 id="modalTitle">Conoce más</h3><div id="modalContent"></div></div></div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+const producers=[
+ {name:"Colmena Dorada",category:"Productos apícolas",location:"Santiago de los Caballeros",desc:"Perfil ficticio de ejemplo para mostrar cómo un productor de miel puede presentar su historia, sus productos y sus datos de contacto.",emoji:"🍯"},
+ {name:"Panal de Oro",category:"Café",location:"Santiago de los Caballeros",desc:"Perfil demostrativo de un pequeño negocio de café. Aquí podrían mostrarse sus variedades, presentaciones y formas de contacto.",emoji:"☕"},
+ {name:"Cera &amp; Miel Artesanal",category:"Dulces y conservas",location:"Santiago de los Caballeros",desc:"Ejemplo de un emprendimiento que ofrece dulces artesanales, mermeladas y conservas de temporada.",emoji:"🍓"}
+];
+const modal=document.getElementById("modal"),modalTitle=document.getElementById("modalTitle"),modalContent=document.getElementById("modalContent");
+function openModal(title,html){modalTitle.textContent=title;modalContent.innerHTML=html;modal.classList.add("open")}
+function closeModal(){modal.classList.remove("open")}
+document.getElementById("modalClose").addEventListener("click",closeModal);
+modal.addEventListener("click",e=>{if(e.target===modal)closeModal()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal()});
+document.querySelectorAll("[data-producer]").forEach(el=>el.addEventListener("click",e=>{e.preventDefault();const p=producers[+el.dataset.producer];openModal(p.name,`<p>${p.desc}</p><p><strong>Categoría:</strong> ${p.category}<br><strong>Ubicación:</strong> ${p.location}</p><p class="demo-note">Datos ficticios utilizados únicamente para esta demostración académica.</p><a class="btn btn-primary" href="#contacto" onclick="closeModal()">Ir a contacto ↗</a>`)}));
+document.querySelectorAll("[data-product]").forEach(el=>el.addEventListener("click",e=>{e.preventDefault();openModal(el.dataset.product,`<p>Esta ficha permite ampliar la información del producto, conocer al emprendimiento que lo elabora y consultar sus datos de contacto.</p><p><strong>Precio:</strong> ilustrativo, en RD$<br><strong>Disponibilidad:</strong> dato de demostración</p><p class="demo-note">Este producto y su precio son ejemplos ficticios. No se realizan compras ni pagos desde esta página.</p>`)}));
+document.querySelectorAll("[data-video-info]").forEach(el=>{const action=()=>openModal("Contenido audiovisual",'<p>Este espacio está preparado para incorporar un video real sobre la polinización, el cuidado de las abejas o la apicultura responsable.</p><p class="demo-note">Antes de la presentación final, se puede sustituir este recuadro por un video con permiso de uso y fuente verificada.</p>');el.addEventListener("click",action);el.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();action()}})});
+const search=document.getElementById("productSearch");let activeFilter="Todos";
+function filterProducts(){const q=search.value.toLowerCase().trim();let count=0;document.querySelectorAll(".product-card").forEach(card=>{const category=card.dataset.category;const matchCategory=activeFilter==="Todos"||category===activeFilter;const matchText=(card.dataset.search+" "+card.innerText).toLowerCase().includes(q);const show=matchCategory&&matchText;card.style.display=show?"":"none";if(show)count++});document.getElementById("noResults").style.display=count?"none":"block"}
+search.addEventListener("input",filterProducts);
+document.querySelectorAll(".filter-btn").forEach(btn=>btn.addEventListener("click",()=>{document.querySelectorAll(".filter-btn").forEach(b=>b.classList.remove("active"));btn.classList.add("active");activeFilter=btn.dataset.filter;filterProducts()}));
+const toast=document.getElementById("toast");let toastTimer;
+function showToast(msg){toast.textContent=msg;toast.classList.add("show");clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove("show"),3200)}
+document.getElementById("producerForm").addEventListener("submit",e=>{e.preventDefault();showToast("¡Formulario de demostración completado! No se enviaron datos.");e.target.reset()});
+document.getElementById("contactForm").addEventListener("submit",e=>{e.preventDefault();showToast("¡Gracias! Este formulario es una demostración y no envía mensajes.");e.target.reset()});
+const menuToggle=document.getElementById("menuToggle"),nav=document.getElementById("mainNav");
+menuToggle.addEventListener("click",()=>nav.classList.toggle("open"));
+nav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>nav.classList.remove("open")));
+const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("visible");observer.unobserve(entry.target)}}),{threshold:.12});
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+
+document.querySelectorAll("[data-map]").forEach(btn=>btn.addEventListener("click",()=>{
+ const i=Number(btn.dataset.map);
+ document.querySelectorAll(".map-pin,.map-producer").forEach(el=>el.classList.remove("selected"));
+ document.querySelectorAll(`[data-map="${i}"]`).forEach(el=>el.classList.add("selected"));
+ const names=["Colmena Dorada","Panal de Oro","Cera & Miel Artesanal"];
+ showToast(`${names[i]} · ubicación ilustrativa en Santiago`);
+}));
+</script>
+</body></html>
